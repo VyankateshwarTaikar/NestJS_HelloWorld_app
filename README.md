@@ -1,156 +1,52 @@
- 1. Manual Deployment of NestJS HelloWorld on EC2
+# Deploy Application for NestJS_HelloWorld_app
 
- Prerequisites:
-- An AWS EC2 instance running a Linux-based OS (e.g., Ubuntu).
-- SSH access to the EC2 instance configured with a private key.
-- Basic knowledge of Linux shell commands.
-
- Steps:
-
-1. Prepare Your EC2 Instance:
-   - Launch an EC2 instance on AWS. Make note of the public DNS (or IP address) and SSH key pair used for access.
-
-2. Connect to Your EC2 Instance:
-   - Open your terminal (or use an SSH client like PuTTY on Windows).
-   - Use the following command to connect to your EC2 instance:
-     bash
-     ssh -i "your_private_key.pem" ubuntu@ec2-your-public-dns.compute-1.amazonaws.com
-     
-   - Replace `your_private_key.pem` with the path to your private key and `ec2-your-public-dns.compute-1.amazonaws.com` with your EC2 instance's public DNS.
-
-3. Install Prerequisites on EC2:
-   - Update the package list:
-     bash
-     sudo apt update
-     
-   - Install Node.js and npm (if not already installed):
-     bash
-     sudo apt install nodejs npm
-     
-     sudo npm install 
-     
-
-4. Clone and Deploy Your NestJS Application:
-   - Navigate to a directory where you want to deploy your application (e.g., `/home/ubuntu`):
-     bash
-     cd /home/ubuntu
-     
-   - Clone your NestJS project from your Git repository (replace `<your_repo_url>` with your actual repository URL):
-     bash
-     git clone https://github.com/Deepak2202-del/nestjs-hello-world.git
-     
-   - Navigate into your NestJS project directory:
-     bash
-     cd /nestjs-hello-world
-     
-   - Install dependencies and build your project:
-     bash
-     npm install
-     npm run build
-     
-   - Start your NestJS application using PM2:
-     bash
-     npm run start
- - Open your web browser and navigate to your EC2 instance's public DNS or IP followed by the appropriate port (default is 3000 for NestJS).
-
- 2. Implementing CI/CD Using GitHub Actions for NestJS
-
- Prerequisites:
-- GitHub repository containing your NestJS project.
-- Basic understanding of GitHub Actions.
-
- Steps:
-
-1. Create a GitHub Actions Workflow:
-   - Inside your GitHub repository, create a `.github/workflows` directory if it doesn't exist.
-   - Create a YAML file (e.g., `main.yml`) for your GitHub Actions workflow.
-
-2. Define Workflow Triggers:
-   - Specify when the workflow should run, for example, on pushes to the `master` branch:
-name: CI/CD for NestJS
-
-on:
-  push:
-    branches:
-      - master  # Trigger on pushes to master branch
+## Flow of diagram for Deploy the NestJS HelloWorld sample application on EC2 manually
+![Deploy the NestJS HelloWorld sample application on EC2 manually](https://github.com/VyankateshwarTaikar/NestJS_HelloWorld_app/assets/102132721/1044e40f-a965-421a-a9ef-054f55d84b27) 
 
 
-3. Set Up Workflow Jobs:
-   - Define jobs to be executed in your workflow:
-     yaml
-     jobs:
-       build:
-         runs-on: ubuntu-latest
+## Fork this Repo 
+👉 https://github.com/VyankateshwarTaikar/NestJS_HelloWorld_app
 
-         steps:
-           - name: Checkout code
-             uses: actions/checkout@v2
+# Requirement 
+1.AWS account with ec2 t2.micro/t3.micro - (Ubuntu)
+2.Github account
+3.Gtrong connection network
 
-           - name: Set up Node.js
-             uses: actions/setup-node@v2
-             with:
-               node-version: '14'
+## Steps For NestJS HelloWorld sample application on EC2 manually 
 
-           - name: Install dependencies
-             run: npm install
+## setup & upgrade repository
+    
+ sudo apt update 
 
-           - name: Build
-             run: npm run build
+ Then install Node.js-->   sudo apt install nodejs
 
-           - name: Run tests
-             run: npm test
-     
+ Check that the install was successful by querying node for its version number:   node -v
 
-4. Add Deployment Step Using SSH Action:
-   - Use an SSH action (e.g., `appleboy/ssh-action`) to connect to your EC2 instance and deploy your NestJS application:
+ If the package in the repositories suits your needs, this is all you need to do to get set up with Node.js. In most cases, you’ll also want to also install npm, the Node.js package manager. You can do this by installing the npm package with apt:    ---> sudo apt install npm
 
-    name: CI/CD for NestJS
+Add 3000 as a port in inbound rule 
+![Screenshot_2](https://github.com/VyankateshwarTaikar/NestJS_HelloWorld_app/assets/102132721/c3760f6f-243e-43fd-8e7f-e7ceac4bec1d)
 
-on:
-  push:
-    branches:
-      - master  # Trigger on pushes to master branch
+![Screenshot_3](https://github.com/VyankateshwarTaikar/NestJS_HelloWorld_app/assets/102132721/74a35e39-7406-4ff1-b5b0-bb1304f164e4)
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+![Screenshot_4](https://github.com/VyankateshwarTaikar/NestJS_HelloWorld_app/assets/102132721/fe7ecd1d-0929-4645-b046-0476357a8d8b) 
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+![Screenshot_5](https://github.com/VyankateshwarTaikar/NestJS_HelloWorld_app/assets/102132721/162c3b31-d6ea-49bb-8cb4-d64c139323be) 
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
+![Screenshot_6](https://github.com/VyankateshwarTaikar/NestJS_HelloWorld_app/assets/102132721/74589781-30eb-4106-b083-ca24d0f06685) 
 
-      - name: Install dependencies
-        run: npm install
+![Screenshot_7](https://github.com/VyankateshwarTaikar/NestJS_HelloWorld_app/assets/102132721/932983e3-b571-472a-aa09-522c61295ff7) 
 
-      - name: Build
-        run: npm run build
+![Screenshot_8](https://github.com/VyankateshwarTaikar/NestJS_HelloWorld_app/assets/102132721/d5f418c1-148b-407f-abc4-557d43c4067a) 
 
-      - name: Run tests
-        run: npm test
+![Screenshot_9](https://github.com/VyankateshwarTaikar/NestJS_HelloWorld_app/assets/102132721/7383105a-b6a7-4cf0-90bf-c6cc8e63c495) 
 
-      - name: Deploy to EC2
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd /home/ubuntu/nestjs-hello-world  
-            # Update to the correct path on your EC2 instance
-            if [ ! -d .git ]; then
-              git init
-              git remote add origin https://github.com/Deepak2202-del/nestjs-hello-world.git
-            fi
-            git fetch origin
-            git reset --hard origin/master  # Use the correct branch name
-            npm install
-            npm run build
-            pm2 restart all || pm2 start dist/main.js --name "nest-app"
-6. Commit and Push Your Workflow:
-   - Save your changes to the YAML file and commit them to your `main` branch.
-   - GitHub Actions will automatically trigger the workflow on pushes to `main`, executing the defined steps.
+![Screenshot_10](https://github.com/VyankateshwarTaikar/NestJS_HelloWorld_app/assets/102132721/8b8fe0e9-086c-43b9-bdbb-de430d787ef1)
+
+## 👉Copy the public ip and paste it on broswer with port number
+
+![Screenshot_11](https://github.com/VyankateshwarTaikar/NestJS_HelloWorld_app/assets/102132721/3a4c9726-38f2-49c6-bd25-6dea488ae461) 
+
+sowe can see the sucessfully deployed the application  with the help of manual deployment 
+
+
