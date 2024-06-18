@@ -52,7 +52,7 @@ Add 3000 as a port in inbound rule
 
 ![Screenshot_10](https://github.com/VyankateshwarTaikar/NestJS_HelloWorld_app/assets/102132721/8b8fe0e9-086c-43b9-bdbb-de430d787ef1)
 
-## 👉Copy the public ip and paste it on broswer with port number
+## 👉Copy the public ip and paste it on browser with port number
 
 ![Screenshot_11](https://github.com/VyankateshwarTaikar/NestJS_HelloWorld_app/assets/102132721/3a4c9726-38f2-49c6-bd25-6dea488ae461) 
 
