@@ -9,7 +9,9 @@
 
 # 🕜Requirement 
 1.AWS account with ec2 t2.micro/t3.micro - (Ubuntu)
+
 2.Github account
+
 3.Gtrong connection network
 
 ## Steps For NestJS HelloWorld sample application on EC2 manually 
@@ -66,7 +68,9 @@ so we  can see the sucessfully deployed the application  with the help of manual
 
 # 🌟Explanation of Secrets 
 1.SSH_PRIVATE_KEY_BASE64: Base64 encoded SSH private key.(that you got while you creating Ec2 instance )
+
 2.EC2_HOST: The EC2 instance's public IP or hostname.
+
 3.EC2_USER: The SSH user for the EC2 instance, typically ubuntu for Ubuntu AMIs.
 
 
