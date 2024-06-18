@@ -18,13 +18,20 @@
 
 ## setup & upgrade repository
     
- sudo apt update 
+$ sudo apt update 
 
- Then install Node.js-->   sudo apt install nodejs
+ ## Then install Node.js-->  
+ $ sudo apt install nodejs
 
- Check that the install was successful by querying node for its version number:   node -v
+ ## Check that the install was successful by querying node for its version number: 
+ 
+ $  node -v
 
- If the package in the repositories suits your needs, this is all you need to do to get set up with Node.js. In most cases, you’ll also want to also install npm, the Node.js package manager. You can do this by installing the npm package with apt:    ---> sudo apt install npm
+ If the package in the repositories suits your needs, this is all you need to do to get set up with Node.js. In most cases, you’ll also want to also install npm, the Node.js package manager. 
+ 
+ ## You can do this by installing the npm package with apt:    
+ 
+$ sudo apt install npm
 
 Add 3000 as a port in inbound rule 
 ![Screenshot_2](https://github.com/VyankateshwarTaikar/NestJS_HelloWorld_app/assets/102132721/c3760f6f-243e-43fd-8e7f-e7ceac4bec1d)
