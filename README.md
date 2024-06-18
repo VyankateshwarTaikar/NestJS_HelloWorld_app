@@ -14,7 +14,7 @@
 
 3.Gtrong connection network
 
-## Steps For NestJS HelloWorld sample application on EC2 manually 
+## 💠Steps For NestJS HelloWorld sample application on EC2 manually 
 
 ## setup & upgrade repository
     
