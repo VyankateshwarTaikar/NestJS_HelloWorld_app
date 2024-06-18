@@ -4,10 +4,10 @@
 ![Deploy the NestJS HelloWorld sample application on EC2 manually](https://github.com/VyankateshwarTaikar/NestJS_HelloWorld_app/assets/102132721/1044e40f-a965-421a-a9ef-054f55d84b27) 
 
 
-## Fork this Repo 
+## 🔗Fork this Repo link
 👉 https://github.com/VyankateshwarTaikar/NestJS_HelloWorld_app
 
-# Requirement 
+# 🕜Requirement 
 1.AWS account with ec2 t2.micro/t3.micro - (Ubuntu)
 2.Github account
 3.Gtrong connection network
@@ -64,13 +64,13 @@ so we  can see the sucessfully deployed the application  with the help of manual
 6. Decode and set up the SSH key.
 7. Deploy to EC2.
 
-# Explanation of Secrets
+# 🌟Explanation of Secrets 
 1.SSH_PRIVATE_KEY_BASE64: Base64 encoded SSH private key.(that you got while you creating Ec2 instance )
 2.EC2_HOST: The EC2 instance's public IP or hostname.
 3.EC2_USER: The SSH user for the EC2 instance, typically ubuntu for Ubuntu AMIs.
 
 
-# Trigger Workflow:
+# 🌠Trigger Workflow:
 The workflow is triggered when there is a push to the main branch.
 
 ## Checkout Code:
@@ -94,7 +94,7 @@ Decodes the SSH private key from the GitHub secret and adds it to the ssh-agent 
 
 Connects to the EC2 instance using SSH and runs the deployment commands.
 
-# when you Update Deploy.yml that will automatically run the deployment 
+#👉 when you Update Deploy.yml that will automatically run the deployment 
 
 ![image](https://github.com/VyankateshwarTaikar/NestJS_HelloWorld_app/assets/102132721/c262c687-c8f5-494d-9f09-5f497a3c74f9)
 
