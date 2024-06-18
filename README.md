@@ -98,7 +98,7 @@ Decodes the SSH private key from the GitHub secret and adds it to the ssh-agent 
 
 Connects to the EC2 instance using SSH and runs the deployment commands.
 
-#👉 when you Update Deploy.yml that will automatically run the deployment 
+# 👉 when you Update Deploy.yml that will automatically run the deployment 
 
 ![image](https://github.com/VyankateshwarTaikar/NestJS_HelloWorld_app/assets/102132721/c262c687-c8f5-494d-9f09-5f497a3c74f9)
 
